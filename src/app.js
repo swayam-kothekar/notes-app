@@ -15,7 +15,7 @@ app.get('/health', (req, res) => {
     env: process.env.APP_ENV || 'development',
     version: process.env.APP_VERSION || '1.0.0',
     uptime: Math.round(process.uptime()),
-    message: 'Service is running'
+    message: 'All systems operational'
   });
 });
 
