@@ -23,7 +23,10 @@ jobs:
             cd ~/notes-app
             git pull origin develop
             npm install
-            pm2 restart notes-api
+            pm2 stop notes-api
+            pm2 delete notes-api
+            APP_ENV=staging pm2 start server.js --name notes-api
+            pm2 save
 
   deploy-production:
     name: Deploy to Production
@@ -41,4 +44,7 @@ jobs:
             cd ~/notes-app
             git pull origin main
             npm install
-            pm2 restart notes-api
+            pm2 stop notes-api
+            pm2 delete notes-api
+            APP_ENV=production pm2 start server.js --name notes-api
+            pm2 save
