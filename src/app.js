@@ -11,7 +11,7 @@ app.use(logger);
 // Health check route
 app.get('/health', (req, res) => {
   res.json({
-    status: 'ok - develop',
+    status: 'ok - feature',
     env: process.env.APP_ENV || 'development',
     version: process.env.APP_VERSION || '1.0.0',
     uptime: Math.round(process.uptime()),
