@@ -33,6 +33,7 @@ router.post('/', (req, res) => {
     title,
     content,
     createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(), 
   };
 
   notes.push(note);
